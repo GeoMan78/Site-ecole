@@ -1,0 +1,356 @@
+:root {
+  /* Définition de variables CSS globales pour les couleurs et styles réutilisables */
+  --fond1: #e8edf5; /* couleur de fond dégradé début */
+  --fond2: #d7e1ef; /* couleur de fond dégradé fin */
+  --carte: rgba(255, 255, 255, 0.55); /* couleur semi-transparente pour les cartes */
+  --bordure: rgba(255, 255, 255, 0.4); /* bordure semi-transparente pour cartes et boutons */
+  --accent: #06b6d4; /* couleur principale accentuée */
+  --accent2: #6366f1; /* couleur secondaire accentuée */
+  --texte: #1e293b; /* couleur du texte principal */
+  --gris: #64748b; /* couleur de texte secondaire / gris */
+  --ombre: rgba(0, 0, 0, 0.12); /* ombre douce pour cartes */
+}
+
+* {
+  box-sizing: border-box;
+  /* Pour que les paddings et bordures soient inclus dans la taille des éléments */
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(160deg, var(--fond1) 0%, var(--fond2) 100%);
+  /* Dégradé de fond principal */
+  color: var(--texte);
+  padding: 40px; /* espace autour du contenu */
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* espace vertical entre sections */
+  position: relative;
+  overflow-x: hidden; /* empêche le scroll horizontal */
+}
+
+/* LOGOS positionnés absolument */
+.logo1 {
+  position: absolute;
+  margin-left: 1180px;
+  margin-top: -35px;
+}
+
+.logo2 {
+  position: absolute;
+  margin-left: 520px;
+  margin-top: -35px;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  position: relative;
+}
+
+.titre-principal {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(90deg, var(--accent2), var(--accent));
+  -webkit-background-clip: text; /* clip du texte pour montrer le dégradé */
+  -webkit-text-fill-color: transparent; /* rend le texte transparent pour afficher le gradient */
+}
+
+.sous-titre {
+  margin-top: 8px;
+  font-size: 1rem;
+  color: var(--gris);
+}
+
+/* STRUCTURE PRINCIPALE : 3 colonnes */
+.conteneur {
+  display: grid;
+  grid-template-columns: 320px 1fr 320px; /* colonnes gauche, centre, droite */
+  gap: 24px; /* espace horizontal entre colonnes */
+  align-items: start;
+}
+
+/* CARTES GÉNÉRALES */
+.cadre {
+  backdrop-filter: blur(12px); /* effet flou pour le fond derrière la carte */
+  background: var(--carte);
+  border-radius: 20px;
+  padding: 22px;
+  box-shadow: 0 12px 24px var(--ombre);
+  border: 1px solid var(--bordure);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.cadre:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.15);
+  /* effet de survol : carte "soulève" légèrement */
+}
+
+/* LABELS */
+.label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gris);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+/* TYPES DE ROBOT (boutons de sélection) */
+.types {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.type-btn {
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--texte);
+  cursor: pointer;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.type-btn:hover {
+  background: white;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+.type-btn.actif {
+  background: linear-gradient(90deg, var(--accent2), var(--accent));
+  color: white;
+  box-shadow: 0 6px 14px rgba(99, 102, 241, 0.25);
+}
+
+/* ZONE PIÈCES */
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.piece[hidden] {
+  display: none !important;
+  /* Masque les pièces qui ne correspondent pas au type sélectionné */
+}
+
+.piece {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.piece:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.nom-piece {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.prix-piece {
+  color: var(--gris);
+  font-size: 0.9rem;
+}
+
+/* BOUTONS D’AJOUT */
+.btn-ajout {
+  margin-top: auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(90deg, var(--accent2), var(--accent));
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.btn-ajout:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* PANIER / RÉCAPITULATIF */
+.recap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.liste-panier {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+.ligne-panier {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+/* NOM DU ROBOT */
+.champ-nom {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.4);
+  color: var(--texte);
+  font-weight: 500;
+}
+
+/* TOTAL */
+.zone-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  border-radius: 14px;
+  background: linear-gradient(90deg, rgba(6,182,212,0.12), rgba(99,102,241,0.08));
+  font-weight: 800;
+  color: var(--texte);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #222;
+  color: #fff;
+  font-size: 0.9rem;
+  /* Pied de page sombre, texte centré, padding et taille réduite pour le copyright. */
+}
+
+
+/* BOUTON RETOUR FIXE */
+#btnRetour button {
+  background: rgba(255,255,255,0.5);
+  color: var(--texte);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+#btnRetour button:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+/* --- SECTION EXTRAS --- */
+.extras {
+  margin-top: 60px;
+  padding: 60px 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.4), rgba(230,240,255,0.8));
+  border-radius: 20px;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.extras-titre {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #6366f1, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.extras-contenu {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.extra-carte {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  padding: 24px;
+  max-width: 300px;
+}
+
+.extra-carte h3 {
+  margin-top: 0;
+  color: #1e293b;
+  font-size: 1.2rem;
+}
+
+.extra-carte p {
+  font-size: 0.95rem;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* Bouton communauté */
+.btn-extra {
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: none;
+  border-radius: 10px;
+  box-shadow: rgba(151, 65, 252, 0.25) 0 10px 25px -5px;
+  color: #ffffff;
+  display: inline-flex;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 14px 26px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-size: 200% 100%;
+  background-position: left;
+}
+
+.btn-extra:hover {
+  background-position: right;
+  transform: translateY(-3px);
+  box-shadow: rgba(151, 65, 252, 0.35) 0 15px 30px -5px;
+}
+
+.btn-extra:active {
+  transform: scale(0.95);
+}
+
+/* Pour que le lien <a> ne casse pas le style */
+a .btn-extra {
+  display: inline-flex;
+  text-decoration: none;
+}

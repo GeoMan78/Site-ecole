@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Le Studio des Robots</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style2.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a href="principal.html" id="btnRetour" style="position:fixed; top:20px; left:20px; z-index:1000; text-decoration:none;">
+    <button>
+      <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024">
+        <path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path>
+      </svg>
+      <span>Back</span>
+    </button>
+  </a>
+  <div class="logo1"><img src="robot-logov1.png"></div>
+  <div class="logo2"><img src="robot-logov2.png"></div>
+
+
+
+  <header>
+    <h1 class="titre-principal">Le Studio des Robots</h1>
+    <div class="sous-titre">Choisis un type, ajoute des pièces et regarde le prix final</div>
+  </header>
+
+  <main class="conteneur">
+    <!-- GAUCHE : choix du type -->
+    <aside class="cadre">
+      <label class="label">Quel type de robot veux-tu faire ?</label>
+      <div class="types">
+        <div class="type-btn" data-type="industriel">Industriel</div>
+        <div class="type-btn" data-type="service">Service</div>
+        <div class="type-btn" data-type="combat">Combat</div>
+      </div>
+    </aside>
+
+    <!-- MILIEU : pièces filtrées par type -->
+    <section class="cadre">
+      <label class="label">Pièces disponibles (clique sur Ajouter)</label>
+      <div class="grille" id="zonePieces">
+        <!-- INDUSTRIEL -->
+        <div class="piece" data-type="industriel">
+          <div class="nom-piece">Bras articulé hydraulique</div>
+          <div class="prix-piece">1 200 €</div>
+          <button class="btn-ajout" data-nom="Bras articulé hydraulique" data-prix="1200">Ajouter</button>
+        </div>
+        <div class="piece" data-type="industriel">
+          <div class="nom-piece">Pince de préhension à vide</div>
+          <div class="prix-piece">450 €</div>
+          <button class="btn-ajout" data-nom="Pince de préhension à vide" data-prix="450">Ajouter</button>
+        </div>
+        <div class="piece" data-type="industriel">
+          <div class="nom-piece">Tête de soudage automatisée</div>
+          <div class="prix-piece">950 €</div>
+          <button class="btn-ajout" data-nom="Tête de soudage automatisée" data-prix="950">Ajouter</button>
+        </div>
+        <div class="piece" data-type="industriel">
+          <div class="nom-piece">Capteur de force et couple</div>
+          <div class="prix-piece">300 €</div>
+          <button class="btn-ajout" data-nom="Capteur de force et couple" data-prix="300">Ajouter</button>
+        </div>
+        <div class="piece" data-type="industriel">
+          <div class="nom-piece">Caméra de vision industrielle</div>
+          <div class="prix-piece">500 €</div>
+          <button class="btn-ajout" data-nom="Caméra de vision industrielle" data-prix="500">Ajouter</button>
+        </div>
+        <div class="piece" data-type="industriel">
+          <div class="nom-piece">Module de convoyeur automatisé</div>
+          <div class="prix-piece">1 100 €</div>
+          <button class="btn-ajout" data-nom="Module de convoyeur automatisé" data-prix="1100">Ajouter</button>
+        </div>
+        <div class="piece" data-type="industriel">
+          <div class="nom-piece">Système de peinture robotisé</div>
+          <div class="prix-piece">1 400 €</div>
+          <button class="btn-ajout" data-nom="Système de peinture robotisé" data-prix="1400">Ajouter</button>
+        </div>
+        <div class="piece" data-type="industriel">
+          <div class="nom-piece">Contrôleur industriel (PLC)</div>
+          <div class="prix-piece">750 €</div>
+          <button class="btn-ajout" data-nom="Contrôleur industriel (PLC)" data-prix="750">Ajouter</button>
+        </div>
+
+        <!-- SERVICE -->
+        <div class="piece" data-type="service">
+          <div class="nom-piece">Châssis mobile à roues omnidirectionnelles</div>
+          <div class="prix-piece">1 000 €</div>
+          <button class="btn-ajout" data-nom="Châssis mobile à roues omnidirectionnelles" data-prix="1000">Ajouter</button>
+        </div>
+        <div class="piece" data-type="service">
+          <div class="nom-piece">Module de reconnaissance vocale</div>
+          <div class="prix-piece">380 €</div>
+          <button class="btn-ajout" data-nom="Module de reconnaissance vocale" data-prix="380">Ajouter</button>
+        </div>
+        <div class="piece" data-type="service">
+          <div class="nom-piece">Écran d’interaction tactile</div>
+          <div class="prix-piece">250 €</div>
+          <button class="btn-ajout" data-nom="Écran d’interaction tactile" data-prix="250">Ajouter</button>
+        </div>
+        <div class="piece" data-type="service">
+          <div class="nom-piece">Caméra de détection faciale</div>
+          <div class="prix-piece">320 €</div>
+          <button class="btn-ajout" data-nom="Caméra de détection faciale" data-prix="320">Ajouter</button>
+        </div>
+        <div class="piece" data-type="service">
+          <div class="nom-piece">Module de déplacement autonome (LIDAR)</div>
+          <div class="prix-piece">900 €</div>
+          <button class="btn-ajout" data-nom="Module de déplacement autonome (LIDAR)" data-prix="900">Ajouter</button>
+        </div>
+        <div class="piece" data-type="service">
+          <div class="nom-piece">Bras léger articulé</div>
+          <div class="prix-piece">700 €</div>
+          <button class="btn-ajout" data-nom="Bras léger articulé" data-prix="700">Ajouter</button>
+        </div>
+        <div class="piece" data-type="service">
+          <div class="nom-piece">Module d'assistance vocale et émotionnelle</div>
+          <div class="prix-piece">500 €</div>
+          <button class="btn-ajout" data-nom="Module d'assistance vocale et émotionnelle" data-prix="500">Ajouter</button>
+        </div>
+        <div class="piece" data-type="service">
+          <div class="nom-piece">Batterie lithium haute capacité</div>
+          <div class="prix-piece">650 €</div>
+          <button class="btn-ajout" data-nom="Batterie lithium haute capacité" data-prix="650">Ajouter</button>
+        </div>
+
+        <!-- COMBAT -->
+        <div class="piece" data-type="combat">
+          <div class="nom-piece">Armature renforcée en titane</div>
+          <div class="prix-piece">2 200 €</div>
+          <button class="btn-ajout" data-nom="Armature renforcée en titane" data-prix="2200">Ajouter</button>
+        </div>
+        <div class="piece" data-type="combat">
+          <div class="nom-piece">Blindage composite modulaire</div>
+          <div class="prix-piece">1 700 €</div>
+          <button class="btn-ajout" data-nom="Blindage composite modulaire" data-prix="1700">Ajouter</button>
+        </div>
+        <div class="piece" data-type="combat">
+          <div class="nom-piece">Canon à impulsion plasma</div>
+          <div class="prix-piece">2 600 €</div>
+          <button class="btn-ajout" data-nom="Canon à impulsion plasma" data-prix="2600">Ajouter</button>
+        </div>
+        <div class="piece" data-type="combat">
+          <div class="nom-piece">Tourelle Mini-Gun</div>
+          <div class="prix-piece">1 350 €</div>
+          <button class="btn-ajout" data-nom="Tourelle Mini-Gun" data-prix="1350">Ajouter</button>
+        </div>
+        <div class="piece" data-type="combat">
+          <div class="nom-piece">Lance-roquettes légers</div>
+          <div class="prix-piece">1 800 €</div>
+          <button class="btn-ajout" data-nom="Lance-roquettes légers" data-prix="1800">Ajouter</button>
+        </div>
+        <div class="piece" data-type="combat">
+          <div class="nom-piece">Système de visée laser</div>
+          <div class="prix-piece">720 €</div>
+          <button class="btn-ajout" data-nom="Système de visée laser" data-prix="720">Ajouter</button>
+        </div>
+        <div class="piece" data-type="combat">
+          <div class="nom-piece">Propulseurs dorsaux</div>
+          <div class="prix-piece">1 000 €</div>
+          <button class="btn-ajout" data-nom="Propulseurs dorsaux" data-prix="1000">Ajouter</button>
+        </div>
+        <div class="piece" data-type="combat">
+          <div class="nom-piece">Module de camouflage actif</div>
+          <div class="prix-piece">2 800 €</div>
+          <button class="btn-ajout" data-nom="Module de camouflage actif" data-prix="2800">Ajouter</button>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- DROITE : récapitulatif -->
+    <aside class="cadre recup recap">
+      <label class="label">Récapitulatif</label>
+      <div class="liste-panier" id="panier"></div>
+      <div>
+        <label class="label">Choisir un nom</label>
+        <input id="champNom" class="champ-nom" placeholder="Nom du robot (optionnel)">
+      </div>
+      <div class="zone-total">
+        <div>Total</div>
+        <div id="totalPrix">0 €</div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button id="btnReinit" class="btn-ajout" style="flex:1;background:linear-gradient(90deg,#334155,#475569)">Réinitialiser</button>
+        <button id="btnFinal" class="btn-ajout" style="flex:1">Finaliser</button>
+      </div>
+    </aside>
+  </main>
+  <section class="extras">
+    <h2 class="extras-titre">Découvrez une autre possibilité</h2>
+    <div class="extras-contenu">
+     <div class="extra-carte unique">
+        <h3>💡 La Communauté du Studio</h3>
+        <p>
+         Rejoignez la communauté du <strong>Studio des Robots</strong> pour partager vos créations,
+         échanger des idées et collaborer avec d'autres passionnés de robotique.
+        </p>
+       <a href="communaute.html">
+          <button class="btn-extra">Rejoindre la communauté</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <footer>
+    <!-- Pied de page de la page web. -->
+
+    <p>&copy; 2025 Le Studio des Robots. Tous droits réservés.</p>
+    <!-- Texte de copyright pour protéger le contenu du site. -->
+  </footer>
+
+  <script src="script.js"></script>
+  <div class="decor-droite"></div>
+</body>
+</html>

@@ -1,0 +1,288 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* 
+    Applique à tous les éléments (*) :
+    - margin: 0 -> supprime les marges par défaut.
+    - padding: 0 -> supprime les espacements internes par défaut.
+    - box-sizing: border-box -> inclut le padding et la bordure dans la largeur et hauteur des éléments, ce qui facilite le calcul des tailles.
+  */
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Police principale pour tout le site, avec une liste de polices de secours. */
+
+  background-color: #f4f4f4;
+  /* Couleur de fond de la page (gris clair). */
+
+  color: #222;
+  /* Couleur du texte par défaut (gris très foncé, presque noir). */
+
+  line-height: 1.6;
+  /* Hauteur de ligne pour améliorer la lisibilité des paragraphes. */
+}
+
+header {
+  width: 100%;
+  /* L'en-tête occupe toute la largeur de la page. */
+
+  --s: 200px;
+  --c1: #1d1d1d;
+  --c2: #4e4f51;
+  --c3: #3c3c3c;
+  /* Variables CSS personnalisées utilisées pour le fond en dégradé conique. */
+
+  background: repeating-conic-gradient(
+        from 30deg,
+        #0000 0 120deg,
+        var(--c3) 0 180deg
+      )
+      calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+    repeating-conic-gradient(
+      from 30deg,
+      var(--c1) 0 60deg,
+      var(--c2) 0 120deg,
+      var(--c3) 0 180deg
+    );
+  /* 
+    Fond complexe avec deux repeating-conic-gradient superposés :
+    - Le premier crée des triangles transparents et colorés.
+    - Le second crée un motif hexagonal avec dégradé.
+    - calc() permet de positionner précisément le motif. */
+
+  background-size: var(--s) calc(var(--s) * 0.577);
+  /* Taille du motif de fond pour répéter correctement. */
+
+  color: white;
+  /* Couleur du texte de l’en-tête. */
+
+  text-align: center;
+  /* Centrage horizontal du texte. */
+
+  padding: 1.5rem 1rem;
+  /* Espacement interne : 1.5rem en haut et bas, 1rem à gauche et droite. */
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Utilisation de Flexbox pour aligner horizontalement les éléments et les espacer uniformément. */
+
+  max-width: 1100px;
+  margin: 0 auto;
+  /* Centre le conteneur et limite sa largeur maximale. */
+
+  position: relative;
+  margin-left: 785px;
+  margin-right: 80px;
+  /* Ces marges spécifiques déplacent le bloc horizontalement (probablement ajusté pour ton design). */
+}
+
+.btn {
+  margin-top: 40px;
+  /* Espace au-dessus du bouton pour le séparer du titre. */
+}
+
+header h1 {
+  font-size: 2rem;
+  /* Taille du titre de l’en-tête. */
+}
+
+nav ul {
+  list-style: none;
+  /* Supprime les puces par défaut de la liste. */
+
+  display: flex;
+  justify-content: center;
+  /* Transforme la liste en ligne et centre les items horizontalement. */
+
+  gap: 2rem;
+  /* Espace uniforme de 2rem entre chaque lien du menu. */
+
+  margin-top: 1rem;
+  /* Petit espace au-dessus du menu pour séparer du titre. */
+}
+
+nav a {
+  color: #fff;
+  /* Couleur du texte des liens du menu. */
+
+  text-decoration: none;
+  /* Supprime le soulignement par défaut des liens. */
+
+  font-weight: bold;
+  /* Met le texte en gras. */
+
+  transition: color 0.3s;
+  /* Animation douce lors du changement de couleur (hover). */
+}
+
+nav a:hover {
+  color: #00aaff;
+  /* Changement de couleur au survol des liens. */
+}
+
+main {
+  padding: 3rem 2rem;
+  /* Espace interne autour du contenu principal. */
+}
+
+.robot-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Flexbox pour aligner le texte et l’image sur une même ligne, avec espace entre eux. */
+
+  background: white;
+  /* Fond blanc pour les sections. */
+
+  margin-bottom: 3rem;
+  /* Espace sous chaque section pour les séparer. */
+
+  padding: 2rem;
+  /* Espacement interne de la section. */
+
+  border-radius: 12px;
+  /* Coins arrondis pour un style plus doux. */
+
+  box-shadow: 0 2px 8px #000;
+  /* Ombre portée pour donner du relief. */
+}
+
+.robot-section:nth-child(even) {
+  flex-direction: row-reverse;
+  /* Les sections paires inversent l’ordre texte/image pour un effet alterné. */
+}
+
+.robot-section .text {
+  flex: 1;
+  /* Le bloc texte prend toute la place disponible proportionnellement. */
+
+  padding-right: 2rem;
+  /* Espace à droite du texte pour séparer de l’image. */
+}
+
+.robot-section img {
+  border-radius: 300px;
+  /* Bords très arrondis pour donner un effet circulaire ou ovale. */
+
+  height: auto;
+  /* L’image garde ses proportions verticales automatiquement. */
+
+  object-fit: contain;
+  /* L’image s’adapte dans son conteneur sans être rognée. */
+}
+
+.image1 img {
+  max-width: 100%;
+  /* L’image de la section industrielle ne dépasse jamais la largeur de son conteneur. */
+}
+
+.image2 img {
+  max-width: 70%;
+  /* L’image de la section service est légèrement réduite pour le design. */
+}
+
+.image3 img {
+  width: 490px;
+  height: auto;
+  /* L’image de la section combat a une largeur fixe mais garde les proportions verticales. */
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: #222;
+  color: #fff;
+  font-size: 0.9rem;
+  /* Pied de page sombre, texte centré, padding et taille réduite pour le copyright. */
+}
+
+/* --- Bouton stylisé --- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* Flexbox pour centrer le texte du bouton. */
+
+  padding: 10px 16px;
+  min-width: 120px;
+  height: 40px;
+  border-radius: 8px;
+  /* Taille et coins arrondis du bouton. */
+
+  background-color: #000;
+  color: #fff;
+  text-decoration: none;
+  /* Style visuel du bouton (fond noir, texte blanc, pas de soulignement). */
+
+  position: relative;
+  z-index: 5;
+  cursor: pointer;
+  /* Position relative pour les pseudo-éléments, curseur pointer au survol. */
+
+  /* -webkit-tap-highlight-color: transparent; (optionnel pour mobile) */
+}
+
+.button-label {
+  position: relative;
+  z-index: 6;
+  font-weight: 600;
+  pointer-events: none;
+  /* Texte du bouton au-dessus des effets de pseudo-éléments, non cliquable indépendamment. */
+}
+
+.button::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.98);
+  /* Centre le pseudo-élément derrière le texte du bouton et le réduit légèrement. */
+
+  width: 140px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+  filter: blur(20px);
+  z-index: 2;
+  pointer-events: none;
+  transition: filter 0.35s ease;
+  /* Pseudo-élément flou qui crée un halo coloré derrière le bouton, animé au survol. */
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(0deg);
+  /* Centre le pseudo-élément devant le ::after. */
+
+  width: 136px;
+  height: 52px;
+  border-radius: 10px;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100%);
+  z-index: 3;
+  pointer-events: none;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Pseudo-élément principal du bouton avec dégradé, animé à la rotation au survol. */
+}
+
+.button:hover::after {
+  filter: blur(30px);
+  /* Agrandit le halo flou derrière le bouton au survol pour un effet lumineux. */
+}
+
+.button:hover::before {
+  transform: translate(-50%, -50%) rotate(-180deg);
+  /* Fait tourner le dégradé du bouton au survol. */
+}
+
+.button:active::before {
+  transform: translate(-50%, -50%) scale(0.72) rotate(-180deg);
+  /* Rétrécit le bouton et garde la rotation lors du clic pour un effet de pression. */
+}

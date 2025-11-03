@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Communauté – Le Studio des Robots</title>
+  
+  <!-- Importation de la police Inter depuis Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Lien vers la feuille de style CSS spécifique à cette page -->
+  <link rel="stylesheet" href="communaute.css">
+</head>
+
+<body>
+  <!-- BOUTON DE RETOUR VERS LA PAGE PRINCIPALE -->
+  <a href="principal.html" id="btnRetour" style="position:fixed; top:20px; left:20px; z-index:1000; text-decoration:none;">
+    <button>
+      <!-- Icône flèche SVG pour le bouton "Back" -->
+      <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024">
+        <path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path>
+      </svg>
+      <span>Back</span>
+    </button>
+  </a>
+  
+  <!-- BOUTON CHARGER (pour éventuellement charger un fichier ou une image) -->
+  <button class="btncharger">Charger</button>
+
+  <!-- HEADER DE LA PAGE -->
+  <header class="header">
+    <div class="header-content">
+      <h1 class="titre">Bienvenue dans la Communauté du Studio</h1>
+      <!-- Logo ou image décorative -->
+      <img src="robot-salut.png" alt="Logo du Studio des Robots" class="logo">
+    </div>
+    <p class="intro">
+      Partagez vos créations, explorez les robots conçus par d'autres inventeurs et inspirez-vous pour vos prochains projets.
+    </p>
+  </header>
+
+  <!-- SECTION GALERIE : affiche les créations de la communauté -->
+  <section class="galerie">
+    <h2 class="section-titre">🌟 Créations de la communauté</h2>
+    <div class="grille-robots">
+      <!-- CARTE D’UN ROBOT -->
+      <div class="robot-carte">
+        <div class="robot-image"><img src="robot-assemblage.jpg"></div>
+        <h3>Robot Atlas X-21</h3>
+        <p>Robot industriel de précision conçu pour l'assemblage automobile.</p>
+      </div>
+      <div class="robot-carte">
+        <div class="robot-image"><img src="robot-restauration.jpg"></div>
+        <h3>ServoChef 3000</h3>
+        <p>Robot de service à table imaginé pour la restauration rapide.</p>
+      </div>
+      <div class="robot-carte">
+        <div class="robot-image"><img src="robot-guerre.jpg"></div>
+        <h3>Sentinelle MK-II</h3>
+        <p>Robot de combat tactique conçu pour les zones à haut risque.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION AJOUT D’UN ROBOT : permet aux utilisateurs de partager leur création -->
+  <section class="ajout">
+    <h2 class="section-titre">🧠 Partagez votre création</h2>
+    <p>
+      Ajoutez votre robot à la galerie communautaire et recevez un e-mail pour accéder au mode de test virtuel.
+    </p>
+    
+    <div class="formulaire-ajout">
+      <!-- LIGNE NOM ET BOUTON CHARGER -->
+      <div class="ligne-nom">
+        <input type="text" placeholder="Nom de votre robot" class="champ champ-nom">
+      </div>
+      <!-- DESCRIPTION DU ROBOT -->
+      <textarea placeholder="Décrivez brièvement votre robot..." class="champ"></textarea>
+      <!-- BOUTON PUBLIER -->
+      <button class="btn-publier">Publier dans la communauté</button>
+    </div>
+  </section>
+
+  <!-- FOOTER DE LA PAGE -->
+  <footer class="footer">
+    © 2025 Le Studio des Robots — Tous droits réservés
+  </footer>
+</body>
+</html>

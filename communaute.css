@@ -1,0 +1,285 @@
+/* ============================= */
+/* VARIABLES GLOBALES            */
+/* ============================= */
+:root {
+  --fond: #e6ecf8;       /* Couleur de fond principale */
+  --accent1: #06b6d4;    /* Couleur d'accent 1 (ex: boutons, titres) */
+  --accent2: #6366f1;    /* Couleur d'accent 2 (dégradé) */
+  --texte: #1e293b;      /* Couleur principale du texte */
+  --gris: #64748b;       /* Couleur secondaire/grisée pour texte moins important */
+}
+
+/* ============================= */
+/* STYLES GLOBAUX                */
+/* ============================= */
+body {
+  font-family: "Inter", sans-serif; /* Police globale */
+  margin: 0;                         /* Supprime marges par défaut */
+  padding: 0;                        /* Supprime padding par défaut */
+  background: linear-gradient(160deg, var(--fond) 0%, #ffffff 100%); /* Dégradé de fond */
+  color: var(--texte);               /* Couleur du texte par défaut */
+}
+
+/* Logo */
+.logo {
+  width: 90px;       /* Largeur fixe */
+  height: auto;      /* Hauteur proportionnelle */
+}
+
+/* ============================= */
+/* HEADER                        */
+/* ============================= */
+.header-content {
+  display: flex;              /* Flexbox pour aligner logo + titre */
+  align-items: center;        /* Centré verticalement */
+  justify-content: center;    /* Centré horizontalement */
+  gap: 16px;                  /* Espacement entre logo et titre */
+}
+
+.titre {
+  font-size: 2.2rem;                                      /* Taille du titre */
+  font-weight: 800;                                        /* Gras extrême */
+  background: linear-gradient(90deg, var(--accent2), var(--accent1)); /* Dégradé */
+  -webkit-background-clip: text;                          /* Clip pour texte */
+  -webkit-text-fill-color: transparent;                  /* Texte transparent pour voir le gradient */
+}
+
+.intro {
+  max-width: 700px;       /* Largeur maximale du texte */
+  margin: 16px auto 0;    /* Centré avec marge haut */
+  font-size: 1rem;        /* Taille du texte */
+  color: var(--gris);     /* Couleur grisée */
+  line-height: 1.5;       /* Interligne confortable */
+}
+
+/* ============================= */
+/* GALERIE DE ROBOTS             */
+/* ============================= */
+.section-titre {
+  text-align: center;     /* Centré */
+  font-size: 1.6rem;      /* Taille du titre de section */
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-weight: 700;       /* Gras */
+  color: var(--texte);    /* Couleur texte */
+}
+
+.grille-robots {
+  display: flex;          /* Flexbox pour cartes */
+  flex-wrap: wrap;        /* Retour à la ligne si nécessaire */
+  justify-content: center;
+  gap: 28px;              /* Espacement entre cartes */
+  padding: 20px;          /* Padding autour */
+}
+
+.robot-carte {
+  background: white;                          /* Fond blanc */
+  border-radius: 18px;                        /* Coins arrondis */
+  width: 280px;                               /* Largeur carte */
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);  /* Ombre douce */
+  overflow: hidden;                           /* Contenu ne dépasse pas */
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* Animation hover */
+}
+
+.robot-carte:hover {
+  transform: rotate(-1deg) translateY(-8px); /* Légère rotation + déplacement */
+  box-shadow: 0 16px 32px rgba(0,0,0,0.12);  /* Ombre plus forte */
+}
+
+.robot-image {
+  position: relative;
+  width: 100%;
+  height: 180px;                    /* Hauteur de l'image */
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Ligne de séparation */
+  display: flex;                    /* Pour centrer contenu */
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.robot-image img {
+  width: 100%;     /* Image pleine largeur */
+  height: 100%;    /* Image pleine hauteur */
+  display: block;  /* Évite les petits espaces sous l'image */
+}
+
+.robot-carte h3 {
+  margin: 16px;    /* Marge autour du titre */
+  font-size: 1.1rem;
+}
+
+.robot-carte p {
+  margin: 0 16px 20px;  /* Marge autour du texte */
+  color: var(--gris);    /* Gris pour texte secondaire */
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* ============================= */
+/* FORMULAIRE D’AJOUT             */
+/* ============================= */
+.ajout {
+  margin-top: 80px;
+  padding: 60px 20px;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(6,182,212,0.08), rgba(99,102,241,0.06)); /* Fond léger */
+}
+
+.formulaire-ajout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;            /* Espacement entre champs */
+  max-width: 500px;     /* Largeur max du formulaire */
+  margin: 0 auto;       /* Centré */
+}
+
+.champ {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.1);
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+textarea.champ {
+  height: 100px;     /* Hauteur spécifique pour textarea */
+  resize: none;      /* Pas de redimensionnement */
+}
+
+.btn-publier {
+  background: linear-gradient(90deg, var(--accent2), var(--accent1));
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 24px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease; /* Animation au hover */
+}
+
+.btn-publier:hover {
+  transform: translateY(-2px); /* Légère remontée */
+  opacity: 0.9;                /* Légère transparence */
+}
+
+/* ============================= */
+/* FOOTER                         */
+/* ============================= */
+.footer {
+  background: #0f172a;    /* Fond sombre */
+  color: white;            /* Texte blanc */
+  text-align: center;
+  padding: 20px;
+  margin-top: 60px;
+  font-size: 0.9rem;
+}
+
+/* ============================= */
+/* BOUTON RETOUR                  */
+/* ============================= */
+#btnRetour button {
+  background: rgba(255,255,255,0.5); /* Semi-transparent */
+  color: var(--texte);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+}
+
+#btnRetour button:hover {
+  background: white;
+  transform: translateY(-3px);
+}
+
+/* ============================= */
+/* BOUTON CHARGER (ANIMÉ)        */
+/* ============================= */
+.btncharger {
+ display: inline-block;
+ position: absolute;
+ padding: 10px 25px;
+ background-color: #4CC713;
+ color: white;
+ font-family: sans-serif;
+ text-decoration: none;
+ font-size: 0.9em;
+ text-align: center;
+ text-indent: 15px;
+ border: none;
+ margin-top: 52.8%;
+ margin-left: 65%;
+}
+
+.btncharger:hover {
+ background-color: #45a21a;
+ color: white;
+}
+
+.btncharger:before, .btncharger:after {
+ content: ' ';
+ display: block;
+ position: absolute;
+ left: 15px;
+ top: 52%;
+}
+
+.btncharger:before {
+ width: 10px;
+ height: 2px;
+ border-style: solid;
+ border-width: 0 2px 2px;
+}
+
+.btncharger:after {
+ width: 0;
+ height: 0;
+ margin-left: 3px;
+ margin-top: -7px;
+ border-style: solid;
+ border-width: 4px 4px 0 4px;
+ border-color: transparent;
+ border-top-color: inherit;
+ animation: downloadArrow 1s linear infinite;
+ animation-play-state: paused;
+}
+
+.btncharger:hover:before {
+ border-color: #cdefbd;
+}
+
+.btncharger:hover:after {
+ border-top-color: #cdefbd;
+ animation-play-state: running;
+}
+
+/* Animation de la flèche du bouton charger */
+@keyframes downloadArrow {
+ 0% {
+  margin-top: -7px;
+  opacity: 1;
+ }
+
+ 0.001% {
+  margin-top: -15px;
+  opacity: 0.4;
+ }
+
+ 50% {
+  opacity: 1;
+ }
+
+ 100% {
+  margin-top: 0;
+  opacity: 0.4;
+ }
+}
