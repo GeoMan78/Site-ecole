@@ -20,15 +20,12 @@
   <div class="logo1"><img src="robot-logov1.png"></div>
   <div class="logo2"><img src="robot-logov2.png"></div>
 
-
-
   <header>
     <h1 class="titre-principal">Le Studio des Robots</h1>
     <div class="sous-titre">Choisis un type, ajoute des pièces et regarde le prix final</div>
   </header>
 
   <main class="conteneur">
-    <!-- GAUCHE : choix du type -->
     <aside class="cadre">
       <label class="label">Quel type de robot veux-tu faire ?</label>
       <div class="types">
@@ -38,11 +35,9 @@
       </div>
     </aside>
 
-    <!-- MILIEU : pièces filtrées par type -->
     <section class="cadre">
       <label class="label">Pièces disponibles (clique sur Ajouter)</label>
       <div class="grille" id="zonePieces">
-        <!-- INDUSTRIEL -->
         <div class="piece" data-type="industriel">
           <div class="nom-piece">Bras articulé hydraulique</div>
           <div class="prix-piece">1 200 €</div>
@@ -84,7 +79,6 @@
           <button class="btn-ajout" data-nom="Contrôleur industriel (PLC)" data-prix="750">Ajouter</button>
         </div>
 
-        <!-- SERVICE -->
         <div class="piece" data-type="service">
           <div class="nom-piece">Châssis mobile à roues omnidirectionnelles</div>
           <div class="prix-piece">1 000 €</div>
@@ -126,7 +120,6 @@
           <button class="btn-ajout" data-nom="Batterie lithium haute capacité" data-prix="650">Ajouter</button>
         </div>
 
-        <!-- COMBAT -->
         <div class="piece" data-type="combat">
           <div class="nom-piece">Armature renforcée en titane</div>
           <div class="prix-piece">2 200 €</div>
@@ -168,10 +161,8 @@
           <button class="btn-ajout" data-nom="Module de camouflage actif" data-prix="2800">Ajouter</button>
         </div>
       </div>
-
     </section>
 
-    <!-- DROITE : récapitulatif -->
     <aside class="cadre recup recap">
       <label class="label">Récapitulatif</label>
       <div class="liste-panier" id="panier"></div>
@@ -192,26 +183,21 @@
   <section class="extras">
     <h2 class="extras-titre">Découvrez une autre possibilité</h2>
     <div class="extras-contenu">
-     <div class="extra-carte unique">
+      <div class="extra-carte unique">
         <h3>💡 La Communauté du Studio</h3>
         <p>
-         Rejoignez la communauté du <strong>Studio des Robots</strong> pour partager vos créations,
-         échanger des idées et collaborer avec d'autres passionnés de robotique.
+          Rejoignez la communauté du <strong>Studio des Robots</strong> pour partager vos créations,
+          échanger des idées et collaborer avec d'autres passionnés de robotique.
         </p>
-       <a href="communaute.html">
+        <a href="communaute.html">
           <button class="btn-extra">Rejoindre la communauté</button>
         </a>
       </div>
     </div>
   </section>
 
-
-
   <footer>
-    <!-- Pied de page de la page web. -->
-
     <p>&copy; 2025 Le Studio des Robots. Tous droits réservés.</p>
-    <!-- Texte de copyright pour protéger le contenu du site. -->
   </footer>
 
   <script src="script.js"></script>
